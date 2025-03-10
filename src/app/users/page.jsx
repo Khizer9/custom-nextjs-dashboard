@@ -15,6 +15,18 @@ const Page = () => {
     { key: "1", name: "John Doe", age: 32, address: "New York" },
     { key: "2", name: "Jane Smith", age: 28, address: "London" },
     { key: "3", name: "Michael Brown", age: 45, address: "San Francisco" },
+    { key: "4", name: "John Doe", age: 32, address: "New York" },
+    { key: "5", name: "Jane Smith", age: 28, address: "London" },
+    { key: "6", name: "Michael Brown", age: 45, address: "San Francisco" },
+    { key: "7", name: "John Doe", age: 32, address: "New York" },
+    { key: "8", name: "Jane Smith", age: 28, address: "London" },
+    { key: "9", name: "Michael Brown", age: 45, address: "San Francisco" },
+    { key: "10", name: "John Doe", age: 32, address: "New York" },
+    { key: "11", name: "Jane Smith", age: 28, address: "London" },
+    { key: "12", name: "Michael Brown", age: 45, address: "San Francisco" },
+    { key: "13", name: "John Doe", age: 32, address: "New York" },
+    { key: "14", name: "Jane Smith", age: 28, address: "London" },
+    { key: "15", name: "Michael Brown", age: 45, address: "San Francisco" },
   ];
 
   // Columns with Filters and Actions
@@ -85,7 +97,7 @@ const Page = () => {
       <Table
         dataSource={filteredData}
         columns={columns}
-        pagination={{ pageSize: 5 }}
+        pagination={{ pageSize: 10 }}
         bordered
       />
     </div>

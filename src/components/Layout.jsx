@@ -7,7 +7,7 @@ const Layout = ({children}) => {
       <Sidebar />
       <div style={{ flex: 1, display: "flex", flexDirection: "column" }}>
         <Header />
-        <main className="p-4">{children}</main>
+        <main className="p-4 overflow-y-scroll">{children}</main>
       </div>
     </div>
   );

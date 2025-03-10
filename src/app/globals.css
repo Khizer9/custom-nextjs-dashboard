@@ -32,7 +32,7 @@ body {
   background-color: white;
 }
 
-header {
+header.main-header {
   position: sticky;
   top: 0;
   background-color: #2b6cb0;
@@ -40,4 +40,12 @@ header {
   padding: 10px 20px;
   z-index: 10;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 80px;
+}
+
+.sidebar-navlinks{
+  cursor: pointer;
 }
