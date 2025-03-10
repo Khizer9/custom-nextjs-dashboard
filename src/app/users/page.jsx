@@ -58,33 +58,44 @@ const Page = () => {
     {
       title: "Actions",
       key: "actions",
-      render: (_, record) => (
-        <Dropdown
-          menu={
-            <Menu>
-              <Menu.Item key="1">Edit</Menu.Item>
-              <Menu.Item key="2">Delete</Menu.Item>
-              <Menu.Item key="3">More</Menu.Item>
-            </Menu>
-          }
-          placement="bottomRight"
-          trigger={["click"]}
-        >
-          <Button
-            type="text"
-            style={{
-              fontSize: "18px",
-              fontWeight: "bold",
-              lineHeight: "1",
-              padding: "0",
-              marginLeft: "15px",
-            }}
+      render: (_, record) => {
+        const menuItems = [
+          {
+            key: "1",
+            label: "Edit",
+          },
+          {
+            key: "2",
+            label: "Delete",
+          },
+          {
+            key: "3",
+            label: "More",
+          },
+        ];
+    
+        return (
+          <Dropdown
+            menu={{ items: menuItems }}
+            placement="bottomRight"
+            trigger={["click"]}
           >
-            ⋮
-          </Button>
-        </Dropdown>
-      ),
-    },
+            <Button
+              type="text"
+              style={{
+                fontSize: "18px",
+                fontWeight: "bold",
+                lineHeight: "1",
+                padding: "0",
+                marginLeft: "15px",
+              }}
+            >
+              ⋮
+            </Button>
+          </Dropdown>
+        );
+      },
+    }
   ];
 
   // Filter Data Based on Search
