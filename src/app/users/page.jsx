@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import { Table, Input, Dropdown, Menu, Button } from "antd";
 import { EllipsisOutlined } from "@ant-design/icons";
+import { useRouter } from "next/navigation";
 
 const { Search } = Input;
 
@@ -10,6 +11,7 @@ const Page = () => {
 
   const [searchText, setSearchText] = useState("");
 
+  const router = useRouter();
   // Sample Data
   const dataSource = [
     { key: "1", name: "John Doe", age: 32, address: "New York" },
@@ -105,6 +107,9 @@ const Page = () => {
 
   return (
     <div>
+      <div className="flex justify-end items-center mb-4">
+        <Button onClick={() => router.push("/create-user")}>Create New User</Button>
+      </div>
       <Table
         dataSource={filteredData}
         columns={columns}
