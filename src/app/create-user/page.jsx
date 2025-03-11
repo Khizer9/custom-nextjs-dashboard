@@ -6,11 +6,7 @@ import { Steps, Button, Form, Input, Select, message } from "antd";
 const StepperForm = () => {
   const [currentStep, setCurrentStep] = useState(0);
   const [form] = Form.useForm();
-  const [savedData, setSavedData] = useState(() => {
-    // Load data from localStorage on mount
-    const data = localStorage.getItem("stepperData");
-    return data ? JSON.parse(data) : {};
-  });
+  const [savedData, setSavedData] = useState({});
   const [messageApi, contextHolder] = message.useMessage();
 
   const success = (msg) => {
@@ -25,6 +21,16 @@ const StepperForm = () => {
     { title: "Step 2", fields: ["address", "city", "state"] },
     { title: "Step 3", fields: ["zip", "country", "notes"] },
   ];
+
+  // Load saved data from localStorage on mount
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      const data = localStorage.getItem("stepperData");
+      if (data) {
+        setSavedData(JSON.parse(data));
+      }
+    }
+  }, []);
 
   useEffect(() => {
     // Populate form fields when currentStep changes
