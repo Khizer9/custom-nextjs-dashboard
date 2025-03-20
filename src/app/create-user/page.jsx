@@ -22,7 +22,7 @@ const StepperForm = () => {
     { title: "Step 3", fields: ["zip", "country", "notes"] },
   ];
 
-  console.log(steps, "steps")
+  console.log(steps, "stepss")
 
   // Load saved data from localStorage on mount
   useEffect(() => {
