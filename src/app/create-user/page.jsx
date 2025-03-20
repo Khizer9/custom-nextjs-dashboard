@@ -22,6 +22,8 @@ const StepperForm = () => {
     { title: "Step 3", fields: ["zip", "country", "notes"] },
   ];
 
+  console.log(steps, "steps")
+
   // Load saved data from localStorage on mount
   useEffect(() => {
     if (typeof window !== "undefined") {

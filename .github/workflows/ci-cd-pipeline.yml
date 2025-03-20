@@ -1,0 +1,33 @@
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Step 1: Checkout code
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      # Step 2: Set up Node.js
+      - name: Set Up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '16' # Use the version compatible with your project
+
+      # Step 3: Install dependencies
+      - name: Install Dependencies
+        run: npm install
+
+      # Step 4: Build the project
+      - name: Build Application
+        run: npm run build
+
+      # Step 5: Deploy to Vercel
+      - name: Deploy to Vercel
+        run: npx vercel --prod --token ${{ secrets.VERCEL_TOKEN }}
